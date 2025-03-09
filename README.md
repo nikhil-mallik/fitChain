@@ -1,4 +1,85 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# FitChain - Step Counter App
+
+A React Native application that tracks steps using device sensors with proper permissions handling for both Android and iOS platforms.
+
+## Features
+
+- Step counting using device accelerometer
+- Calorie and distance estimation
+- Permission handling for activity recognition
+- Vibration feedback for milestone achievements
+- Clean and modern UI with bottom tab navigation
+- Settings screen for app customization
+- About screen with app information
+
+## App Navigation
+
+The app uses a bottom tab navigation with three main screens:
+
+1. **Step Counter** - The main screen that displays your step count, distance, and calories burned
+2. **Settings** - Configure app settings like dark mode, units, and permissions
+3. **About** - Information about the app, features, and how it works
+
+## Required Permissions
+
+### Android
+- `ACTIVITY_RECOGNITION` - Required to count steps
+- `ACCESS_FINE_LOCATION` - For accurate step tracking
+- `ACCESS_COARSE_LOCATION` - For general location awareness
+- `VIBRATE` - For haptic feedback on milestones
+
+### iOS
+- `NSMotionUsageDescription` - Required to access motion and fitness data
+- `NSLocationWhenInUseUsageDescription` - For location-based step tracking
+
+## Installation
+
+1. Clone the repository:
+```
+git clone https://github.com/yourusername/fitchain.git
+cd fitchain
+```
+
+2. Install dependencies:
+```
+npm install
+```
+
+3. Run the app:
+
+For iOS:
+```
+npx react-native run-ios
+```
+
+For Android:
+```
+npx react-native run-android
+```
+
+## Dependencies
+
+- React Native
+- React Navigation (Bottom Tabs)
+- react-native-sensors - For accessing device accelerometer
+- react-native-permissions - For handling permissions
+- @react-native-community/hooks - For useful React Native hooks
+
+## How It Works
+
+The app uses the device's accelerometer to detect steps based on movement patterns. When a significant acceleration change is detected (crossing a threshold), it's counted as a step. The app also calculates estimated calories burned and distance traveled based on the step count.
+
+## Permissions Handling
+
+The app requests necessary permissions at startup and provides clear explanations to users about why these permissions are needed. Users can grant or deny permissions, and the app handles both scenarios gracefully.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 # Getting Started
 
@@ -66,7 +147,7 @@ This is one way to run your app — you can also build it directly from Android 
 
 Now that you have successfully run the app, let's make changes!
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
 
 When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
 
